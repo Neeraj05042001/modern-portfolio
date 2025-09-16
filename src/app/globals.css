@@ -1,26 +1,43 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+}
+.btn:hover {
+  background-color: hsl(0, 0%, 51%);
+  color: white;
+
+  border-radius: 20%;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-instrument-sans: var(--font-instrument-sans), sans-serif;
+  --font-instrument-serif: var(--font-instrument-serif), serif;
+  --font-outfit: var(--font-outfit), sans-serif;
+}
+/* Resizable nav */
+.nav-base:hover{
+    transform: translateY(-0.125rem);
+}
+/* Expand background div on hover */
+.contact-btn:hover .contact-btn-bg {
+  width: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Move text slightly left on hover */
+.contact-btn:hover .contact-btn-text {
+  left: -0.75rem; /* Tailwind's -left-3 */
+  color: black;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Optional: Add shadow + active effect */
+.contact-btn:hover {
+  box-shadow: 0 0 100px 1px #dcdcdc;
+}
+
+.contact-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px 5px rgba(168, 85, 247, 0.4);
 }
